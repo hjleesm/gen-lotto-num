@@ -25,25 +25,25 @@ export class LotteryService {
   public mix() {
     this.init();
 
-    for(var i = 0; i < this.balls.length; i++) {
-      var num1 = Math.floor(Math.random() * 45);
-      var num2 = Math.floor(Math.random() * 45);
+    for (let i = 0; i < this.balls.length; i++) {
+      const num1 = Math.floor(Math.random() * 45);
+      const num2 = Math.floor(Math.random() * 45);
 
-      var tmp = this.balls[num1];
+      const tmp = this.balls[num1];
       this.balls[num1] = this.balls[num2];
       this.balls[num2] = tmp;
     }
   }
 
   public getNumber() {
-    var ret = [];
+    const ret = [];
 
-    for(var i = 0; i < 6; i++) {
-      var num = Math.floor(Math.random() * this.balls.length);
+    for (let i = 0; i < 6; i++) {
+      const num = Math.floor(Math.random() * this.balls.length);
       ret.push(this.balls[num]);
       this.balls.splice(num, 1);
     }
-    
+
     this.mix();
     return ret.sort(function(a, b) {
       return a - b;

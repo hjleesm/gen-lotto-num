@@ -1,0 +1,15 @@
+.resultView {
+    border-width: 1px 0px 0px 0px;
+    border-color: #ffffff;
+    border-style: solid;
+
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #ffffff;
+}
+
+.ballList {
+    display: inline-block;
+}

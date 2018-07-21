@@ -1,4 +1,4 @@
-.circle1 {
+.circle {
     display: inline-block;
 
     width: 50px;
@@ -8,4 +8,20 @@
     border-radius: 200px;
 
     line-height: 50px;
+
+    text-align: center;
+}
+
+.circle-small {
+    display: inline-block;
+
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    /* background: linear-gradient(60deg,#f1f1f1,#f3f3f3); */
+    border-radius: 100px;
+
+    line-height: 25px;
+
+    text-align: center;
 }

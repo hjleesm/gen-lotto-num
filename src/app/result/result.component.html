@@ -1,0 +1,6 @@
+<div  *ngIf="ballGroups.length > 0" class="resultView" align="center">
+  <h3>결과</h3>
+  <div class="ballList">
+    <app-ball-group *ngFor="let ballGroup of ballGroups" [ballGroup]="ballGroup"></app-ball-group>
+  </div>
+</div>
