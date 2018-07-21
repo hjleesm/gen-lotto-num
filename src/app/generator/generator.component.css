@@ -3,11 +3,11 @@
 }
 
 .roundRect {
-    width: 500px;
-    height: 70px;
+    width: 350px;
+    height: 60px;
 
     background: linear-gradient(60deg,#f1f1f1,#f3f3f3);
-    border-radius: 20px;
+    border-radius: 5px;
     /* box-shadow: 1px 1px 1px 1px lightgrey; */
 }
 
@@ -18,7 +18,7 @@
     margin: 20px;
 
     background: linear-gradient(60deg,#f1f1f1,#f3f3f3);
-    border-radius: 10px;
+    border-radius: 5px;
 
     cursor: pointer;
 }
