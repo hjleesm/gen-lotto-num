@@ -1,0 +1,6 @@
+<div class="wrapper" align="center">
+  <div class="roundRect">
+    <app-ball *ngFor="let number of numbers" [number]="number"></app-ball>
+  </div>
+  <div class="button" (click)="onClick()"><b>생성</b></div>
+</div>

@@ -1,0 +1,11 @@
+.circle1 {
+    display: inline-block;
+
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    /* background: linear-gradient(60deg,#f1f1f1,#f3f3f3); */
+    border-radius: 200px;
+
+    line-height: 50px;
+}
