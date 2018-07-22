@@ -22,3 +22,7 @@
 
     cursor: pointer;
 }
+
+.guideString {
+    line-height: 40px;
+}

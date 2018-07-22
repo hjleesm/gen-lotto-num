@@ -1,6 +1,9 @@
 <div class="wrapper" align="center">
   <div class="roundRect">
     <app-ball *ngFor="let number of numbers" [number]="number"></app-ball>
+    <div class="guideString" *ngIf="numbers.length == 0">
+      아래 생성 버튼을 클릭하세요.
+    </div>
   </div>
   <div class="button" (click)="onClick()"><b>생성</b></div>
 </div>
