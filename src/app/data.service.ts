@@ -20,8 +20,6 @@ export class DataService {
     
     this.http.post(API_URL + '/api/lotto/push', {
       numbers: ballGroup.join(' ')
-    }).subscribe(data => {
-      console.log(data);
     });
   }
 }
