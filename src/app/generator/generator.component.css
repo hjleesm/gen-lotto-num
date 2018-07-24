@@ -12,6 +12,8 @@
 }
 
 .button {
+    display: inline-block;
+
     width: 100px;
     height: 40px;
     line-height: 40px;
@@ -23,6 +25,18 @@
     cursor: pointer;
 }
 
+.option {
+    display: inline-block;
+
+    cursor: pointer;
+}
+
+.arrow {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
 .guideString {
     line-height: 40px;
 }

@@ -10,6 +10,7 @@ import { THIS_EXPR } from '../../../node_modules/@angular/compiler/src/output/ou
 })
 export class GeneratorComponent implements OnInit {
   numbers = [];
+  isOpenOption = false;
 
   constructor(
     private lotteryService: LotteryService,
@@ -23,5 +24,9 @@ export class GeneratorComponent implements OnInit {
   onClick() {
     this.numbers = this.lotteryService.getNumber();
     this.dataService.push(this.numbers);
+  }
+
+  onOption() {
+    this.isOpenOption = !this.isOpenOption;
   }
 }

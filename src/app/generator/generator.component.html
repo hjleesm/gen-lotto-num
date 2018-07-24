@@ -6,4 +6,10 @@
     </div>
   </div>
   <div class="button" (click)="onClick()"><b>생성</b></div>
+  <div class="option" (click)="onOption()">
+    <div class="arrow">
+      옵션<img *ngIf="!isOpenOption" class="arrow" src="assets/images/arrow-down.png" width="12px" height="12px">
+      <img *ngIf="isOpenOption" class="arrow" src="assets/images/arrow-up.png" width="12px" height="12px">
+    </div>
+  </div>
 </div>
