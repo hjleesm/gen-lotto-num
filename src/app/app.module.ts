@@ -9,6 +9,7 @@ import { BottomComponent } from './bottom/bottom.component';
 import { ResultComponent } from './result/result.component';
 import { BallGroupComponent } from './ball-group/ball-group.component';
 import { AdsenseComponent } from './adsense/adsense.component';
+import { OptionComponent } from './option/option.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AdsenseComponent } from './adsense/adsense.component';
     BottomComponent,
     ResultComponent,
     BallGroupComponent,
-    AdsenseComponent
+    AdsenseComponent,
+    OptionComponent
   ],
   imports: [
     BrowserModule,
