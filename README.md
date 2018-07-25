@@ -1,27 +1,13 @@
-# GenLottoNum
+# 로또 번호 생성기
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+로또 번호 생성기 프로젝트입니다. 
 
-## Development server
+링크: http://genlotto.ga
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 현재 기능
+- 임의의 로또 번호 생성
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## 개발 예정 기능
+- 포함할 번호 선택 기능
+- 제외할 번호 선택 기능
+- 생성된 번호 당첨 여부 통계(서버 이용하여 개발. https://github.com/hjleesm/lottoServer)
