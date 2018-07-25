@@ -10,6 +10,9 @@ export class LotteryService {
             31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
             41, 42, 43, 44, 45
           ];
+          
+  includeNumbers = [];
+  excludeNumbers = [];
 
   constructor() { }
 
@@ -22,7 +25,7 @@ export class LotteryService {
     ];
   }
 
-  public mix() {
+  mix() {
     this.init();
 
     for (let i = 0; i < this.balls.length; i++) {
@@ -35,7 +38,7 @@ export class LotteryService {
     }
   }
 
-  public getNumber() {
+  getNumber() {
     const ret = [];
 
     for (let i = 0; i < 6; i++) {
@@ -48,5 +51,21 @@ export class LotteryService {
     return ret.sort(function(a, b) {
       return a - b;
     });
+  }
+
+  pushIncludeNumber(number) {
+    if (5 < this.includeNumbers.length || this.includeNumbers.includes(number))
+      return false;
+
+    this.includeNumbers.push(number);
+    return true;
+  }
+
+  pushExcludeNumber(number) {
+    if (5 < this.excludeNumbers.length || this.excludeNumbers.includes(number))
+      return false;
+
+    this.excludeNumbers.push(number);
+    return true;
   }
 }

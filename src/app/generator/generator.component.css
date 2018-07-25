@@ -12,17 +12,11 @@
 }
 
 .button {
-    display: inline-block;
-
-    width: 100px;
-    height: 40px;
-    line-height: 40px;
-    margin: 20px;
-
-    background: linear-gradient(60deg,#f1f1f1,#f3f3f3);
+    margin: 20px 10px 20px 10px;
     border-radius: 5px;
 
-    cursor: pointer;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: bold;
 }
 
 .option {
