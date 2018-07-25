@@ -2,7 +2,7 @@
 
 로또 번호 생성기 프로젝트입니다. 
 
-링크: http://genlotto.ga
+링크: http://hjin.iptime.org:8088/lotto/
 
 ## 현재 기능
 - 임의의 로또 번호 생성
