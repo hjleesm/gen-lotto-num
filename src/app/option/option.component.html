@@ -1,20 +1,27 @@
-<div class="wrapper">
-  <mat-form-field class="select-number">
-    <mat-select placeholder="포함 할 숫자" [ngModel]="includeNum" (ngModelChange)="updateIncludeNum($event)">
-      <mat-option *ngFor="let number of numbers" [value]="number">
-        {{number}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  &nbsp;<button class="button" mat-button (click)="onIncludeBtn()">추가</button>
-</div>
-<div class="wrapper">
-  <mat-form-field class="select-number">
-    <mat-select placeholder="제외 할 숫자" [ngModel]="excludeNum" (ngModelChange)="updateExcludeNum($event)">
-      <mat-option *ngFor="let number of numbers" [value]="number">
-        {{number}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  &nbsp;<button mat-button (click)="onExcludeBtn()">추가</button>
+<div>
+  <div class="roundRect">
+    <div class="wrapper">
+      <mat-form-field class="select-number">
+        <mat-select placeholder="포함할 번호" [ngModel]="includeNum" (ngModelChange)="updateIncludeNum($event)">
+          <mat-option *ngFor="let number of numbers" [value]="number">
+            {{number}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      &nbsp;<button class="button" mat-button (click)="onIncludeBtn()">추가</button>
+    </div>
+    <div class="wrapper">
+      <mat-form-field class="select-number">
+        <mat-select placeholder="제외할 번호" [ngModel]="excludeNum" (ngModelChange)="updateExcludeNum($event)">
+          <mat-option *ngFor="let number of numbers" [value]="number">
+            {{number}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      &nbsp;<button mat-button (click)="onExcludeBtn()">추가</button>
+    </div>
+    <div class="error" *ngIf="error.length > 0">
+      {{error}}
+    </div>
+  </div>
 </div>

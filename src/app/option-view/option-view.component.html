@@ -1,0 +1,9 @@
+<div class="wrapper" *ngIf="includeNumbers.length > 0">
+  포함할 번호: <app-ball class="ball" *ngFor="let number of includeNumbers" [number]="number" [isSmall]="true" (click)="removeIncludeNumber(number)"></app-ball>
+</div>
+<div class="wrapper" *ngIf="excludeNumbers.length > 0">
+  제외할 번호: <app-ball class="ball" *ngFor="let number of excludeNumbers" [number]="number" [isSmall]="true" (click)="removeExcludeNumber(number)"></app-ball>
+</div>
+<div class="guideString">
+  (번호를 클릭하면 제거됩니다.)
+</div>

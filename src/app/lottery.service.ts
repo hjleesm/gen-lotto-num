@@ -1,28 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LotteryService {
-  balls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-            11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-            21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-            31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
-            41, 42, 43, 44, 45
-          ];
+  addedIncludeNumbers: EventEmitter<any> = new EventEmitter();
+  addedExcludeNumbers: EventEmitter<any> = new EventEmitter();
+  
+  balls = [];
           
   includeNumbers = [];
   excludeNumbers = [];
 
-  constructor() { }
+  constructor() {
+    this.init();
+  }
 
   public init() {
-    this.balls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-      11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-      21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-      31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
-      41, 42, 43, 44, 45
-    ];
+    this.balls = [];
+
+    for (var i = 1; i <= 45; i++)
+      this.balls.push(i);
   }
 
   mix() {
@@ -38,10 +36,42 @@ export class LotteryService {
     }
   }
 
+  processIncludeNumbers(array) {
+    if (this.includeNumbers.length == 0)
+      return;
+
+    for (var i = 0; i < this.includeNumbers.length; i++) {
+      for(var j = 0; j < this.balls.length; j++) {
+        if (this.includeNumbers[i] == this.balls[j]) {
+          array.push(this.balls[j]);
+          this.balls.splice(j, 1);
+          break;
+        }
+      }
+    }
+  }
+
+  processExcludeNumbers(array) {
+    if (this.excludeNumbers.length == 0)
+      return;
+
+    for (var i = 0; i < this.excludeNumbers.length; i++) {
+      for(var j = 0; j < this.balls.length; j++) {
+        if (this.excludeNumbers[i] == this.balls[j]) {
+          this.balls.splice(j, 1);
+          break;
+        }
+      }
+    }
+  }
+
   getNumber() {
     const ret = [];
 
-    for (let i = 0; i < 6; i++) {
+    this.processIncludeNumbers(ret);
+    this.processExcludeNumbers(ret);
+
+    for (let i = ret.length; i < 6; i++) {
       const num = Math.floor(Math.random() * this.balls.length);
       ret.push(this.balls[num]);
       this.balls.splice(num, 1);
@@ -54,18 +84,68 @@ export class LotteryService {
   }
 
   pushIncludeNumber(number) {
-    if (5 < this.includeNumbers.length || this.includeNumbers.includes(number))
-      return false;
+    if (5 < this.includeNumbers.length) {
+      return {
+        status: false,
+        msg: '최대 6개의 번호만 추가할 수 있습니다.'
+      }
+    }
+    
+    if (this.includeNumbers.includes(number)) {
+      return {
+        status: false,
+        msg: '이미 포함된 번호입니다.'
+      }
+    }
+
+    if (this.excludeNumbers.includes(number)) {
+      return {
+        status: false,
+        msg: '제외할 번호에 추가된 번호입니다.'
+      }
+    }
 
     this.includeNumbers.push(number);
-    return true;
+    this.includeNumbers.sort(function(a, b) {
+      return a - b;
+    });
+    this.addedIncludeNumbers.emit(this.includeNumbers);
+
+    return {
+      status: true
+    };
   }
 
   pushExcludeNumber(number) {
-    if (5 < this.excludeNumbers.length || this.excludeNumbers.includes(number))
-      return false;
+    if (5 < this.excludeNumbers.length) {
+      return {
+        status: false,
+        msg: '최대 6개의 번호만 추가할 수 있습니다.'
+      }
+    }
+    
+    if (this.excludeNumbers.includes(number)) {
+      return {
+        status: false,
+        msg: '이미 포함된 번호입니다.'
+      }
+    }
+
+    if (this.includeNumbers.includes(number)) {
+      return {
+        status: false,
+        msg: '포함할 번호에 추가된 번호입니다.'
+      }
+    }
 
     this.excludeNumbers.push(number);
-    return true;
+    this.excludeNumbers.sort(function(a, b) {
+      return a - b;
+    });
+    this.addedExcludeNumbers.emit(this.excludeNumbers);
+    
+    return {
+      status: true
+    };
   }
 }

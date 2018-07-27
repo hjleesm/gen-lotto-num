@@ -10,6 +10,7 @@ export class OptionComponent implements OnInit {
   numbers = [];
   includeNum;
   excludeNum;
+  error = '';
 
   constructor(private lotteryService: LotteryService) { }
 
@@ -27,12 +28,30 @@ export class OptionComponent implements OnInit {
   }
 
   onIncludeBtn() {
-    if (!isNaN(this.includeNum))
-      this.lotteryService.pushIncludeNumber(this.includeNum);
+    var ret; 
+
+    if (!isNaN(this.includeNum)) {
+      ret = this.lotteryService.pushIncludeNumber(this.includeNum);
+
+      if (ret.status) {
+        this.error = '';
+      } else {
+        this.error = ret.msg;
+      }
+    }
   }
 
   onExcludeBtn() {
-    if (!isNaN(this.excludeNum))
-      this.lotteryService.pushExcludeNumber(this.excludeNum);
+    var ret; 
+
+    if (!isNaN(this.excludeNum)) {
+      ret = this.lotteryService.pushExcludeNumber(this.excludeNum);
+
+      if (ret.status) {
+        this.error = '';
+      } else {
+        this.error = ret.msg;
+      }  
+    }
   }
 }

@@ -20,6 +20,7 @@ import { OptionComponent } from './option/option.component';
 
 
 import 'hammerjs';
+import { OptionViewComponent } from './option-view/option-view.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import 'hammerjs';
     ResultComponent,
     BallGroupComponent,
     AdsenseComponent,
-    OptionComponent
+    OptionComponent,
+    OptionViewComponent
   ],
   imports: [
     BrowserModule,

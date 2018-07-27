@@ -11,6 +11,8 @@ import { THIS_EXPR } from '../../../node_modules/@angular/compiler/src/output/ou
 export class GeneratorComponent implements OnInit {
   numbers = [];
   isOpenOption = false;
+  includeNumbers = [];
+  excludeNumbers = [];
 
   constructor(
     private lotteryService: LotteryService,
@@ -19,6 +21,14 @@ export class GeneratorComponent implements OnInit {
 
   ngOnInit() {
     this.lotteryService.mix();
+
+    this.lotteryService.addedIncludeNumbers.subscribe(data => {
+      this.includeNumbers = data;
+    })
+
+    this.lotteryService.addedExcludeNumbers.subscribe(data => {
+      this.excludeNumbers = data;
+    })
   }
 
   onClick() {

@@ -1,0 +1,12 @@
+.wrapper {
+    font-size: 14px;
+}
+
+.ball {
+    cursor: pointer;
+}
+
+.guideString {
+    font-size: 14px;
+    color: #74beec;
+}
