@@ -1,0 +1,27 @@
+.circle {
+    display: inline-block;
+
+    width: 40px;
+    height: 40px;
+    margin: 8px;
+    /* background: linear-gradient(60deg,#f1f1f1,#f3f3f3); */
+    border-radius: 200px;
+
+    line-height: 40px;
+
+    text-align: center;
+}
+
+.circle-small {
+    display: inline-block;
+
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    /* background: linear-gradient(60deg,#f1f1f1,#f3f3f3); */
+    border-radius: 100px;
+
+    line-height: 25px;
+
+    text-align: center;
+}

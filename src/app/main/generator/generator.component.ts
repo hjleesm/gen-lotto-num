@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LotteryService } from '../lottery.service';
-import { DataService } from '../data.service';
-import { THIS_EXPR } from '../../../node_modules/@angular/compiler/src/output/output_ast';
+import { LotteryService } from '../../lottery.service';
+import { DataService } from '../../data.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-generator',

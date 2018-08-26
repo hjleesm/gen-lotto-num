@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LotteryService } from '../lottery.service';
+import { LotteryService } from '../../lottery.service';
 
 @Component({
   selector: 'app-option',
