@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter} from '@angular/core';
 import { environment } from '../environments/environment';
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
 
 const API_URL = environment.apiUrl;
 

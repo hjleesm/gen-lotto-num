@@ -1,4 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <app-main></app-main>
+  <h1>
+    <div class="logo" (click)="onLogo()">
+      <img src="assets/images/logo.png" width="32px" height="32px"> {{ title }}
+    </div>
+  </h1>
+  <router-outlet></router-outlet>
+  <app-adsense></app-adsense>
+  <app-bottom></app-bottom>
 </div>
+

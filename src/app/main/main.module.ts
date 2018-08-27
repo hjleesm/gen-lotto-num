@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
 import { BallComponent } from './ball/ball.component';
 import { GeneratorComponent } from './generator/generator.component';
-import { BottomComponent } from './bottom/bottom.component';
 import { ResultComponent } from './result/result.component';
 import { BallGroupComponent } from './ball-group/ball-group.component';
-import { AdsenseComponent } from './adsense/adsense.component';
 import { OptionComponent } from './option/option.component';
 import { OptionViewComponent } from './option-view/option-view.component';
 import { MainComponent } from './main/main.component';
@@ -18,8 +17,11 @@ import {
   MatSelectModule
  } from '@angular/material';
 
+ const routes: Routes = [{ path: '', component: MainComponent }];
+
 @NgModule({
   imports: [
+    RouterModule.forRoot(routes),
     CommonModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -29,16 +31,15 @@ import {
   declarations: [
     BallComponent,
     GeneratorComponent,
-    BottomComponent,
     ResultComponent,
     BallGroupComponent,
-    AdsenseComponent,
     OptionComponent,
     OptionViewComponent,
     MainComponent
   ],
   exports: [
-    MainComponent
+    MainComponent,
+    RouterModule
   ]
 })
 export class MainModule { }

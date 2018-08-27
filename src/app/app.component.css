@@ -1,3 +1,8 @@
 h1 {
     color: #ffffff;
 }
+
+.logo {
+    display: inline-block;
+    cursor: pointer;
+}
