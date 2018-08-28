@@ -12,7 +12,9 @@ export class AnalyticsComponent implements OnInit {
   constructor(private analyticsService: AnalyticsService) { }
 
   ngOnInit() {
-    this.analyticsService.getCount();
+    this.analyticsService.getCount().subscribe(data => {
+      this.count = data.json();
+    });
   }
 
 }

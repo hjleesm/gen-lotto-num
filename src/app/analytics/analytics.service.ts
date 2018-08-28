@@ -8,12 +8,11 @@ const API_URL = environment.apiUrl;
   providedIn: 'root'
 })
 export class AnalyticsService {
+  onCount: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: Http) { }
 
   getCount() {
-    this.http.get('localhost:8088/api/lotto/count').subscribe((data) => {
-      console.log(data);
-    });
+    return this.http.get(API_URL + '/api/lotto/count');
   }
 }
