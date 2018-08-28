@@ -17,4 +17,7 @@ export class ResultComponent implements OnInit {
     });
   }
 
+  onClear() {
+    this.dataService.clear();
+  }
 }

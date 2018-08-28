@@ -29,6 +29,10 @@ export class GeneratorComponent implements OnInit {
     this.lotteryService.addedExcludeNumbers.subscribe(data => {
       this.excludeNumbers = data;
     })
+
+    this.dataService.onClear.subscribe(() => {
+      this.numbers.length = 0;
+    })
   }
 
   onClick() {

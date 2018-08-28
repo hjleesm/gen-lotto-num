@@ -4,11 +4,19 @@
     border-style: solid;
 
     margin-top: 10px;
-    padding-bottom: 10px;
 }
 
 h3 {
     color: #ffffff;
+}
+
+.button {
+    color: #f0555c;
+    margin: 20px 10px 20px 10px;
+    border-radius: 5px;
+
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: bold;
 }
 
 .ballList {
