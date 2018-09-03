@@ -1,1 +1,4 @@
 <h4>지금까지 총 {{ count }}개의 번호 셋이 생성되었습니다.</h4>
+<div *ngIf="chart">
+    <canvas id="canvas">{{ chart }}</canvas>
+</div>
