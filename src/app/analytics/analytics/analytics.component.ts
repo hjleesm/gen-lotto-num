@@ -23,7 +23,7 @@ export class AnalyticsComponent implements OnInit {
       var label = [];
 
       countData.date = countData.date.reverse();
-      for(var i = 0; i < countData.date.length - 1; i++) {
+      for(var i = 0; i < countData.date.length; i++) {
         var dt = new Date(countData.date[i]);
         label.push(dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate());
       }
