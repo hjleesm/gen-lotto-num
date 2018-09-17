@@ -2,11 +2,11 @@
 <div *ngIf="chart.length === 0">
     <img src="assets/images/loading.gif">
 </div>
-<div *ngIf="chart">
-    <canvas id="canvas">{{ chart }}</canvas>
+<div id="chartContainer" *ngIf="chart">
+    <canvas id="canvas" class="chartCanvas">{{ chart }}</canvas>
 </div>
 <br>
-<div *ngIf="mChart">
-    <canvas id="mCanvas">{{ mChart }}</canvas>
+<div id="chartContainer" *ngIf="mChart">
+    <canvas id="mCanvas" class="chartCanvas">{{ mChart }}</canvas>
 </div>
 <br>
