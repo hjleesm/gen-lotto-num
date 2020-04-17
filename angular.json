@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "gen-lotto-num"
+  "defaultProject": "gen-lotto-num",
+  "cli": {
+    "analytics": "a2d6fa39-aa95-4ea3-9831-a4cfea018ee8"
+  }
 }

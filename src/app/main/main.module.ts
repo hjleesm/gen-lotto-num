@@ -13,9 +13,11 @@ import { MainComponent } from './main/main.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { 
-  MatButtonModule, 
+  MatButtonModule,
+ } from '@angular/material/button';
+import {
   MatSelectModule
- } from '@angular/material';
+} from '@angular/material/select';
 
  const routes: Routes = [{ path: '', component: MainComponent }];
 
